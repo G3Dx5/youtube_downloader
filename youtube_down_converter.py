@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 from moviepy.editor import *
 import pytube
@@ -5,10 +7,13 @@ import pytube
 ''' Script to download YouTube videoa and convert to .mp3'''
 
 
+''' convert video to audio (moviepy), write out tehw audio file '''
 def convert_to_mp3(video, name):
     video = VideoFileClip(os.path.join(video))
     name = video.audio.write_audiofile(os.path.join(name))
 
+''' get the video from YT URL, extract the title, rename to the title, covert to 
+.mp then delete the original .mp4'''
 def get_vid(link):
     save_path = "."
     try:
