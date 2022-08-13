@@ -7,7 +7,7 @@ import pytube
 ''' Script to download YouTube videoa and convert to .mp3'''
 
 
-''' convert video to audio (moviepy), write out tehw audio file '''
+''' convert video to audio (moviepy), write out the  audio file '''
 def convert_to_mp3(video, name) -> None:
     video = VideoFileClip(os.path.join(video))
     name = video.audio.write_audiofile(os.path.join(name))
