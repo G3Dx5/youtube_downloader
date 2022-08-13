@@ -8,12 +8,14 @@ import pytube
 
 
 ''' convert video to audio (moviepy), write out the  audio file '''
+
 def convert_to_mp3(video, name) -> None:
     video = VideoFileClip(os.path.join(video))
     name = video.audio.write_audiofile(os.path.join(name))
 
 ''' get the video from YT URL, extract the title, rename to the title, covert to 
-.mp then delete the original .mp4'''
+.mp3 then delete the original .mp4'''
+
 def get_vid(link) -> None:
     save_path = "."
     try:
@@ -31,5 +33,5 @@ def get_vid(link) -> None:
     convert_to_mp3(video_name, title + ".mp3")
     os.remove(video_name)
 
-get_vid("YT_link_here")
+get_vid("place YT_link_here")
 
