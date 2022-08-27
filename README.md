@@ -11,5 +11,6 @@ The mp4 file is deleted on completion.
 
 ## youtube_processor.py
 
+Provide a YouTube URL then extract the name and ID then place in a dictionary. After getting the video, extract the audio into mp3 then get the transcript.  When the transcript returns it will be in JSON format.  Take hte JSON format and make it more reader friendly.    
 
 Note: I do not support copyright infringement, the code is not to be used for illegally obtaining copyrighted content.  
