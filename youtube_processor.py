@@ -7,11 +7,6 @@ import os
 import pytube
 from youtube_transcript_api import YouTubeTranscriptApi
 
-'''  
-To do: 
-Help text 
-python connection error
-'''  
 
 ''' Process input arguments '''
 parser = argparse.ArgumentParser(description='YouTube Dowloader, extractor and transcript processor')
