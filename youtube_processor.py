@@ -12,9 +12,12 @@ from youtube_transcript_api import YouTubeTranscriptApi
 Code to download YouTube video, extract audio and convert to mp3.  After that go back to YouTube 
 and get transcript. Then format into a more readbale version of JSON. 
 
+Version: 0.0.1
+
 TODO
 
 [-] Make record of files 
+[-] Add error handling
 
 Usage:  python3 youtube_processor -i "https://youtube.com/your_yt_video"
 '''
@@ -83,7 +86,6 @@ def processJSON():
             tf.write(formatted_json)
     except Exception as e:
         print(repr(e))
-
 
 def convertSeconds(seconds):
     ''' convert seconds to minute / hour units'''
