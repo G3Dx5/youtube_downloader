@@ -7,6 +7,12 @@ import os
 import pytube
 from youtube_transcript_api import YouTubeTranscriptApi
 
+'''
+Code to download YouTube video, extract audio, convert to mp3.  After that go back to YouTube 
+and get transcript. Then format into a more readbale version of JSON. 
+
+Usage:  python3 youtube_processor -i "https://youtube.com/your_yt_video"
+'''
 
 ''' Process input arguments '''
 parser = argparse.ArgumentParser(description='YouTube Dowloader, extractor and transcript processor')
