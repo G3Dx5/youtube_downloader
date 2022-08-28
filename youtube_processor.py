@@ -12,6 +12,10 @@ from youtube_transcript_api import YouTubeTranscriptApi
 Code to download YouTube video, extract audio and convert to mp3.  After that go back to YouTube 
 and get transcript. Then format into a more readbale version of JSON. 
 
+TODO
+
+[-] Make record of files 
+
 Usage:  python3 youtube_processor -i "https://youtube.com/your_yt_video"
 '''
 
@@ -100,7 +104,6 @@ def getDuration(path):
                 tot_length += length
         hours, minutes, seconds = convertSeconds(tot_length).split(":")
         print("Duration: " + str(int(hours)) + ':' + str(int(minutes)) + ':' + str(int(seconds)))
-
 
             
 def main():
