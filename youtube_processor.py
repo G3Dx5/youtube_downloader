@@ -2,6 +2,7 @@
 
 import argparse
 import json
+from mutagen.mp3 import MP3
 from moviepy.editor import *
 import os
 import pytube
@@ -79,6 +80,28 @@ def processJSON():
     except Exception as e:
         print(repr(e))
 
+
+def convertSeconds(seconds):
+    ''' convert seconds to minute / hour units'''
+    hours = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return "%02d:%02d:%02d" % (hours, minutes, seconds)
+
+def getDuration(path):
+    ''' get mp3 video length '''
+    tot_length = 0
+    for root, dir, files in os.walk(os.path.abspath(path)):
+        for file in files:
+            if file.endswith(".mp3"):
+                audio = MP3(os.path.join(root, file))
+                length = audio.info.length
+                tot_length += length
+        hours, minutes, seconds = convertSeconds(tot_length).split(":")
+        print("Duration: " + str(int(hours)) + ':' + str(int(minutes)) + ':' + str(int(seconds)))
+
+
             
 def main():
     getYTvideoName()
@@ -86,6 +109,7 @@ def main():
     getYouTubeVideo(video_data["YouTubeLink"])
     getTranscript()
     processJSON()
+    getDuration("/location/of/your/mp3files")
     
 if __name__== "__main__" :
     main()
