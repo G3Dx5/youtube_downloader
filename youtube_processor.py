@@ -64,6 +64,10 @@ class Youtubeprocessor:
         except: 
             print("Connection Error, unable to reach YouTube")
         video_name = str(cls.video_data["Name"]) + ".mp4"
+        if os.path.exists(video_name) == True: 
+            print("Video File exists")
+            return 
+        
         stream = video.streams.first()
         try:
             stream.download(save_path)
