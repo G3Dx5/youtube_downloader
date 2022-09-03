@@ -19,6 +19,7 @@ Version: 0.0.2
 TODO
 
 [-] Make record of files 
+[-] Check for existence of transcript
 [-] Add better error handling
 [-] Improve JSON formatting 
 Usage:  python3 youtube_processor -l "https://youtube.com/your_yt_video"
